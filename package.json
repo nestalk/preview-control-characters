@@ -1,0 +1,58 @@
+{
+    "name": "preview-control-characters",
+    "displayName": "Preview Control Characters",
+    "description": "Show invisible control characters in file",
+    "version": "0.0.1",
+    "publisher": "nestalk",
+    "engines": {
+        "vscode": "^0.10.10"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.showControlCharacterPreview"
+    ],
+    "main": "./out/src/extension",
+    "contributes": {
+        "commands": [{
+            "command": "extension.showControlCharacterPreview",
+            "title": "Preview Control Characters"
+        }]
+    },
+    "scripts": {
+        "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+        "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install"
+    },
+    "devDependencies": {
+        "typescript": "^1.8.5",
+        "vscode": "^0.11.0"
+    },
+    "configuration": {
+       "type": "object",
+       "title": "Preview Control Characters Option Configuration",
+       "properties": {
+         "previewControlCharacters.newLineAfterCR": {
+           "type": "boolean",
+           "default": false,
+           "description": "add a new line character after a carrige return"
+          },
+          "previewControlCharacters.newLineAfterLF": {
+            "type": "boolean",
+            "default": true,
+            "description": "add a new line character after a line feed"
+          },
+          "previewControlCharacters.monospaceFont": {
+            "type": "boolean",
+            "default": false,
+            "description": "show preview window using monospaced fonts"
+          },
+          "previewControlCharacters.translateSpace": {
+            "type": "boolean",
+            "default": false,
+            "description": "translate spaces to control character"
+          }
+       }
+    }
+}
