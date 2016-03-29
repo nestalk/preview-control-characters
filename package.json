@@ -18,7 +18,33 @@
         "commands": [{
             "command": "extension.showControlCharacterPreview",
             "title": "Preview Control Characters"
-        }]
+        }],
+        "configuration": {
+        "type": "object",
+        "title": "Preview Control Characters Option Configuration",
+        "properties": {
+            "previewControlCharacters.newLineAfterCR": {
+            "type": "boolean",
+            "default": false,
+            "description": "add a new line character after a carrige return"
+            },
+            "previewControlCharacters.newLineAfterLF": {
+                "type": "boolean",
+                "default": true,
+                "description": "add a new line character after a line feed"
+            },
+            "previewControlCharacters.monospaceFont": {
+                "type": "boolean",
+                "default": false,
+                "description": "show preview window using monospaced fonts"
+            },
+            "previewControlCharacters.translateSpace": {
+                "type": "boolean",
+                "default": false,
+                "description": "translate spaces to control character"
+            }
+        }
+        }
     },
     "scripts": {
         "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
@@ -28,32 +54,6 @@
     "devDependencies": {
         "typescript": "^1.8.5",
         "vscode": "^0.11.0"
-    },
-    "configuration": {
-       "type": "object",
-       "title": "Preview Control Characters Option Configuration",
-       "properties": {
-         "previewControlCharacters.newLineAfterCR": {
-           "type": "boolean",
-           "default": false,
-           "description": "add a new line character after a carrige return"
-          },
-          "previewControlCharacters.newLineAfterLF": {
-            "type": "boolean",
-            "default": true,
-            "description": "add a new line character after a line feed"
-          },
-          "previewControlCharacters.monospaceFont": {
-            "type": "boolean",
-            "default": false,
-            "description": "show preview window using monospaced fonts"
-          },
-          "previewControlCharacters.translateSpace": {
-            "type": "boolean",
-            "default": false,
-            "description": "translate spaces to control character"
-          }
-       }
     },
     "bugs": {
 		"url": "https://github.com/nestalk/preview-control-characters/issues",
