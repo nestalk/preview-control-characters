@@ -106,7 +106,7 @@ export function activate(context: vscode.ExtensionContext) {
                 </style>
                 <body>
                     <pre>
-                        ${text}
+${text}
                     </pre>
                 </body>`;
         }
